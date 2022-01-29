@@ -38,8 +38,7 @@ spec:
         - /bin/go-httpbin -port 80 -response-delay 10ms
         command:
         - /bin/sh
-        image: build-harbor.alauda.cn/test/go-httpbin:1.2-alpine3.13
-        #image: maying0104/go-httpbin:1.2-alpine3.13
+        image: maying0104/go-httpbin:1.2-alpine3.13
         imagePullPolicy: IfNotPresent
         name: go-httpbin
         ports:

@@ -14,8 +14,7 @@ spec:
     sidecarInject: enabled
   deployments:
   - containerImage:
-    - build-harbor.alauda.cn/test/upload-file-demo:v1.0.0
-    #- maying0104/upload-file-demo:v1.0.0
+    - maying0104/upload-file-demo:v1.0.0
     name: upload-file-demo
   services:
   - iscreatebysystem: true

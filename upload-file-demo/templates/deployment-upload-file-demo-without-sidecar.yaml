@@ -25,8 +25,7 @@ spec:
         service.cpaas.io/name: deployment-upload-file-demo-without-sidecar
     spec:
       containers:
-      - image: build-harbor.alauda.cn/test/upload-file-demo:v1.0.0
-        #image: maying0104/upload-file-demo:v1.0.0
+      - image: maying0104/upload-file-demo:v1.0.0
         imagePullPolicy: IfNotPresent
         name: upload-file-demo-without-sidecar
         ports:
