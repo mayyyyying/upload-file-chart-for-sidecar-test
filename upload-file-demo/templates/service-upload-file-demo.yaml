@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cpaas.io/creator: admin@cpaas.io
+    cpaas.io/operator: admin@cpaas.io
+    resource.cpaas.io/reference: '["Deployment.upload-file-demo"]'
+  labels:
+    asm.cpaas.io/jvmmonitor: "false"
+    asm.cpaas.io/msname: upload-file-demo
+  name: upload-file-demo
+spec:
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http-8080-8080
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: upload-file-demo
+    asm.cpaas.io/msname: upload-file-demo
+    msname: upload-file-demo
+    service.cpaas.io/name: deployment-upload-file-demo
+  sessionAffinity: None
+  type: ClusterIP

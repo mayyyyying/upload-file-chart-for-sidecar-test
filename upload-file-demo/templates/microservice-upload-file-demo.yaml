@@ -1,0 +1,22 @@
+apiVersion: asm.alauda.io/v1beta3
+kind: MicroService
+metadata:
+  annotations:
+    asm.cpaas.io/msdeployment: upload-file-demo
+    asm.cpaas.io/msdeployment-primary: upload-file-demo
+  labels:
+    app.cpaas.io/dev-framework: ""
+    app.cpaas.io/microservice-type: service-mesh
+  name: upload-file-demo
+spec:
+  clusters:
+  - name: asm
+    sidecarInject: enabled
+  deployments:
+  - containerImage:
+    - build-harbor.alauda.cn/test/upload-file-demo:v1.0.0
+    #- maying0104/upload-file-demo:v1.0.0
+    name: upload-file-demo
+  services:
+  - iscreatebysystem: true
+    name: upload-file-demo
